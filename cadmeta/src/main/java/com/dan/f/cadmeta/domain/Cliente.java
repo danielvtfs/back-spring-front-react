@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -28,6 +29,7 @@ public class Cliente implements Serializable{
 	private String nome;
 	
 	@NotBlank(message = "CPF é obrigatório")
+	@Column(unique = true)
 	private String cpf;
 	
 	@NotBlank(message = "Data de nascimento é obrigatório")

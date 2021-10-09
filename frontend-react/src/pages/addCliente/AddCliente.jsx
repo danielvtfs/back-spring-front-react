@@ -1,18 +1,6 @@
 import React, { Component } from 'react'
 import ClienteService from '../../services/ClienteService';
 import './addCliente.css'
-import { useForm } from "react-hook-form";
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from "yup";
-
-const validation = yup.object.shape({
-    nome: yup.string().required(),
-    cpf: yup.string().required(),
-    dataDeNascimento: yup.string().required(),
-    logradouro: yup.string().required(),
-    bairro: yup.string().required(),
-    cep: 
-})
 
 class AddCliente extends Component {
     constructor(props) {
