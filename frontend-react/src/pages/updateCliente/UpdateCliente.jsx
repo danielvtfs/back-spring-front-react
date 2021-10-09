@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ClienteService from '../../services/ClienteService';
+import './updateCliente.css'
 
 class UpdateCliente extends Component {
     constructor(props) {
@@ -91,8 +92,8 @@ class UpdateCliente extends Component {
                 <br></br>
                    <div className = "container">
                         <div className = "row">
-                            <div className = "card col-md-6 offset-md-3 offset-md-3">
-                            <h3 className="text-center">Update Employee</h3>
+                            <div className = "card ">
+                            <h3 className="text-center">Atualizar Cliente</h3>
                                 <div className = "card-body">
                                     <form>
                                         <div className = "form-group">

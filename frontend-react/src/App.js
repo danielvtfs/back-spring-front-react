@@ -5,6 +5,7 @@ import HomeClientes from './pages/home/HomeClientes';
 import Header from './components/header/Header';
 import AddCliente from './pages/addCliente/AddCliente';
 import UpdateCliente from './pages/updateCliente/UpdateCliente';
+import VisualizarCliente from './pages/visualizar/VisualizarCliente';
 
 function App() {
   return (
@@ -16,11 +17,12 @@ function App() {
             <Route path="/" exact component={HomeClientes}></Route>
             <Route path="/addClientes/:id" component={AddCliente}></Route>
             <Route path="/updateCliente/:id" component={UpdateCliente}></Route>
+            <Route
+              path="/visualizarCliente/:id"
+              component={VisualizarCliente}
+            ></Route>
           </Switch>
         </BrowserRouter>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
       </header>
     </div>
   );

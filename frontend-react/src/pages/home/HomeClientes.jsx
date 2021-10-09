@@ -7,7 +7,7 @@ export default class HomeClientes extends Component {
 
     this.state = {
       clientes: [],
-      enderecos: [],
+      //enderecos: [],
     };
     this.editCliente = this.editCliente.bind(this);
     this.deleteCliente = this.deleteCliente.bind(this);
@@ -30,10 +30,10 @@ export default class HomeClientes extends Component {
     });
   }
   viewCliente(id) {
-    this.props.history.push(`/view-cliente/${id}`);
+    this.props.history.push(`/visualizarCliente/${id}`);
   }
   editCliente(id) {
-    this.props.history.push(`/addCliente/${id}`);
+    this.props.history.push(`/updateCliente/${id}`);
   }
 
   addCliente(){
@@ -44,9 +44,7 @@ export default class HomeClientes extends Component {
     return (
       <div>
         <h1 className="text-center">Lista de Clientes</h1>
-        <div className = "row">
-            <button className="btn btn-primary" onClick={this.addCliente}>Adicionar</button>
-         </div>
+
           <br></br>
         <div className = "row">
           <table className="table table-striped table-bordered">
@@ -67,7 +65,7 @@ export default class HomeClientes extends Component {
                   <td>{cliente.dataDeNascimento}</td>
                   <tr>
                     {cliente.enderecos.map((endereco) => (
-                      <td width={265}>{endereco.logradouro} ...</td>
+                      <td width={265} height={70}>{endereco.logradouro} ...</td>
                     ))}
                   </tr>
                   <td>
@@ -75,21 +73,21 @@ export default class HomeClientes extends Component {
                       onClick={() => this.editCliente(cliente.id)}
                       className="btn btn-info"
                     >
-                      Update{' '}
+                      Atualizar
                     </button>
                     <button
                       style={{ marginLeft: '10px' }}
                       onClick={() => this.deleteCliente(cliente.id)}
                       className="btn btn-danger"
                     >
-                      Delete{' '}
+                      Delete
                     </button>
                     <button
                       style={{ marginLeft: '10px' }}
                       onClick={() => this.viewCliente(cliente.id)}
                       className="btn btn-info"
                     >
-                      View{' '}
+                      Visualizar
                     </button>
                   </td>
                 </tr>

@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -23,10 +24,13 @@ public class Cliente implements Serializable{
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 
+	@NotBlank(message = "Nome é obrigatório")
 	private String nome;
 	
+	@NotBlank(message = "CPF é obrigatório")
 	private String cpf;
 	
+	@NotBlank(message = "Data de nascimento é obrigatório")
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date dataDeNascimento;
 
